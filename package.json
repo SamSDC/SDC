@@ -1,0 +1,75 @@
+{
+  "name": "starfire-project-catwalk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:dev": "webpack -w",
+    "start": "npx nodemon index.js",
+    "test": "jest",
+    "build": "webpack --config webpack.prod.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JacobMelnick/starfire-project-catwalk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JacobMelnick/starfire-project-catwalk/issues"
+  },
+  "homepage": "https://github.com/JacobMelnick/starfire-project-catwalk#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cloudinary": "^1.26.0",
+    "cssloader": "^1.1.1",
+    "express": "^4.17.1",
+    "express-form-data": "^2.0.17",
+    "identity-obj-proxy": "^3.0.0",
+    "loader": "^2.1.1",
+    "luxon": "^1.27.0",
+    "nodemon": "^2.0.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-lazyload": "^3.2.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/plugin-syntax-jsx": "^7.14.5",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-react": "^7.13.13",
+    "@testing-library/react": "^11.2.7",
+    "babel-jest": "^27.0.2",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.6",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "jest": "^27.0.4",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-merge": "^5.8.0",
+    "wepback": "^1.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "modulePaths": [
+      "/shared/vendor/modules"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "shared"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  }
+}
