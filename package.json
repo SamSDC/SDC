@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:dev": "webpack --config webpack.dev.js -w",
+    "build:dev": "webpack -w",
     "start": "npx nodemon index.js",
-    "test": "jest",
-    "build": "webpack --config webpack.prod.js "
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -45,13 +44,11 @@
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",
     "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.3.1",
     "jest": "^27.0.4",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0",
-    "webpack-merge": "^5.8.0",
     "wepback": "^1.0.0"
   },
   "jest": {

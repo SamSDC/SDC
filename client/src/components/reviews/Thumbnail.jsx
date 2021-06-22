@@ -33,11 +33,9 @@ class Thumbnail extends React.Component {
 
         </div> */}
         <img
-          height='70'
-          width='70'
           alt='review-thumbnail'
           className={styles.smallImg}
-          src={`https://cdn.filestackcontent.com/AWs7LcKPWTNKPac9vsWCQz/resize=width:70/${this.props.source}}`}
+          src={`${this.props.source}`}
           onClick={this.handleClick}
         />
         {modal}

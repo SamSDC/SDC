@@ -24,7 +24,6 @@ coverage
 
 # nyc test coverage
 .nyc_output
-
 # Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
@@ -80,7 +79,7 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+bundle.js
 
 # Gatsby files
 .cache/
@@ -103,6 +102,8 @@ dist
 # TernJS port file
 .tern-port
 
-#config
-
+# TOKEN
 config.js
+
+.env
+Catwalk.pem
