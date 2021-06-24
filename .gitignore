@@ -107,3 +107,8 @@ config.js
 
 .env
 Catwalk.pem
+
+postgres-data/*
+config.js
+
+csv-files/*
