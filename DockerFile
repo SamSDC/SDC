@@ -1,0 +1,3 @@
+FROM postgres
+ENV POSTGRES_DB questionsandanswers
+COPY mySchema.sql /docker-entrypoint-initdb.d/

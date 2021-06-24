@@ -1,0 +1,1 @@
+psql -d postgres -f mySchema.sql 
