@@ -1,25 +1,37 @@
-var models = require('../models');
+var { getProduct, getStyles, getRelated } = require('../models').products;
+
+const handleQuery = (req, res, dataModel) => {
+  const { product_id } = req.params;
+    if (product_id === undefined) {
+      res.status(500).end('Unable to parse {product_id} property from req.params');
+    } else {
+      dataModel(product_id)
+        .then(model => {
+          const [client, query] = model;
+          query.then((psqlResponse) => {
+            res.status(200).end(JSON.stringify(psqlResponse.rows));
+          })
+          .finally(() => {
+            client.release();
+          })
+        })
+        .catch(err => {
+          console.error('Error fetching product: ' + product_id);
+          console.error(err);
+        })
+      }
+};
 
 module.exports = {
   get: function(req, res) {
-    models.products.getProduct(req.params.product_id)
-    .then((response) => {
-     res.status(200).end(JSON.stringify(response.data));
-    })
-    .catch(err => {
-      console.log('err', err);
-      res.status(400).end();
-    })
+    handleQuery(req, res, getProduct);
   },
 
-  getImgs: function(req, res) {
-    models.products.getStyles(req.params.product_id)
-    .then((response) => {
-     res.status(200).end(JSON.stringify(response.data));
-    })
-    .catch(err => {
-      console.log('err', err);
-      res.status(400).end();
-    })
+  getStyles: function(req, res) {
+    handleQuery(req, res, getStyles);
+  },
+
+  getRelated: (req, res) => {
+    handleQuery(req, res, getRelated);
   }
 }
