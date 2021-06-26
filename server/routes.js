@@ -25,7 +25,9 @@ router.get('/reviews/meta/:product_id', controller.reviews.getMeta);
 
 router.put('/reviews/:review_id/helpful', controller.reviews.markHelpful);
 
-router.get('/products/:product_id/styles', controller.products.getImgs);
+router.get('/products/:product_id/styles', controller.products.getStyles);
+
+router.get('/products/:product_id/related', controller.products.getRelated);
 
 router.post('/reviews', controller.reviews.submitForm);
 
