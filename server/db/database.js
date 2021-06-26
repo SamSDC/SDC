@@ -1,25 +1,12 @@
 const {Pool, Client} = require('pg');
 
-
-/*
-
-const client = new Client(connectionString)
-client.connect((err, success) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('success');
-  }
-})
-
-*/
 const pool = new Pool()
 
 pool.connect()
   .then(client => {
     return client
-      .query('select * from questions limit 1;')
-      .then(console.log)
+      .query(`SELECT * FROM answers where question_id = 2`)
+      // .then(console.log)
       .finally(() => client.release());
   })
   .catch(console.error);
@@ -29,4 +16,7 @@ pool.connect()
   }
 
 
-module.exports.pool = pool;
+module.exports = {
+    pool,
+    newClient
+};
