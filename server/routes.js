@@ -3,11 +3,13 @@ var router = require('express').Router();
 
 router.get('/products/:product_id', controller.products.get);
 
-router.get('/qa/questions', controller.questions.getQuestions);
+router.get('/qa/questions', controller.questions.getQuestionTable);
 
-router.post('/qa/questions', controller.questions.postQuestion);
+router.post('/qa/questions', controller.questions.postQuestionTable);
 
-router.post('/qa/questions/:question_id/answers', controller.questions.postAnswer);
+router.post('/qa/questions/:question_id/answers', controller.questions.postAnswerTable);
+
+router.get('/qa/questions/:question_id/answers', controller.questions.getAnswerTable);
 
 router.put('/qa/questions/:question_id/helpful', controller.questions.putQuestionHelpful);
 

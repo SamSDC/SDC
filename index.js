@@ -10,12 +10,8 @@ const path = require('path');
 const db = require('./server/db/database.js');
 
 
+
 let app = express();
-
-
-
-
-
 cloudinary.config({
   cloud_name: config.CLOUD_NAME,
   api_key: config.API_KEY,
