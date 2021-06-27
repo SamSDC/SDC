@@ -112,3 +112,4 @@ postgres-data/*
 config.js
 
 csv-files/*
+csv/

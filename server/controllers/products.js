@@ -1,6 +1,7 @@
 var { getProduct, getStyles, getRelated } = require('../models').products;
 
 const handleQuery = (req, res, dataModel) => {
+  // console.log('got here');
   const { product_id } = req.params;
     if (product_id === undefined) {
       res.status(500).end('Unable to parse {product_id} property from req.params');
