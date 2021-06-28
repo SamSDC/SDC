@@ -112,3 +112,5 @@ postgres-data/*
 config.js
 
 csv-files/*
+
+postgres.pem

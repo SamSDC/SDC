@@ -30,6 +30,7 @@
     "identity-obj-proxy": "^3.0.0",
     "loader": "^2.1.1",
     "luxon": "^1.27.0",
+    "newrelic": "^7.5.1",
     "nodemon": "^2.0.7",
     "papaparse": "^5.3.1",
     "pg": "^8.6.0",
@@ -54,27 +55,17 @@
     "file-loader": "^6.2.0",
     "jest": "^27.0.4",
     "style-loader": "^2.0.0",
+    "supertest": "^6.1.3",
     "url-loader": "^4.1.1",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0",
     "wepback": "^1.0.0"
   },
   "jest": {
-    "testEnvironment": "jsdom",
-    "modulePaths": [
-      "/shared/vendor/modules"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
-    "moduleDirectories": [
-      "node_modules",
-      "shared"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "identity-obj-proxy"
-    }
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/postgres-data"
+    ]
   }
 }

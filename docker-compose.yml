@@ -1,16 +1,28 @@
 version: '3.7'
 services:
       postgres:
-        build: .
         image: postgres:10.5
-        container_name: questionsandanswers
-        restart: always
+        restart: unless-stopped
         environment:
-          - POSTGRES_USER=postgres
-          - POSTGRES_PASSWORD=postgres
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
         ports:
-          - '5432:5432'
+          - "5432:5432"
         volumes: 
           - ./postgres-data:/var/lib/postgresql/data
           # copy the sql script to create tables
           - ./mySchema.sql:/docker-entrypoint-initdb.d/mySchema.sql
+      # web-server: 
+      #     build: .
+      #     environment: 
+      #     - PGUSER= "${POSTGRES_USER}"
+      #     - PGHOST= "${POSTGRES_HOST}"
+      #     - PGDABATASE= "${POSTGRES_DATABASE}"
+      #     - PGPASSWORD= "${POSTGRES_PASSWORD}"
+      #     - PGPOST= "${POSTGRES_PORT}"
+      #     ports: 
+      #       - '3000:3000'
+      #     depends_on: 
+      #       - 'postgres'
+      #     links: 
+      #       - 'postgres'

@@ -12,18 +12,22 @@ const pool = new Pool()
 
 console.info('Creating database pool.');
 
-pool.connect()
+const newClient = () => {
+  return pool.connect();
+}
+
+const init = async () => {
+  await newClient()
   .then(client => {
     return client.query('select now();')
       .then((res) => console.info(`Successfully connected to database '${PGDATABASE}' using pool.`))
       .finally(() => client.release());
   })
   .catch(console.error);
+}
 
-  const newClient = () => {
-    return pool.connect();
-  }
-
+// init();
 
 module.exports.pool = pool;
 module.exports.newClient = newClient;
+module.exports.init = init;

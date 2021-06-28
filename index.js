@@ -1,17 +1,16 @@
 require('dotenv').config()
-const fs = require('fs')
+require('newrelic');
 const config = require('./config.js');
 const express = require('express');
 const cloudinary = require('cloudinary');
 const formData = require('express-form-data');
 const router = require('./server/routes.js');
-const port = 3246;
-const path = require('path');
 const db = require('./server/db/database.js');
 
-
+db.init();
 
 let app = express();
+
 cloudinary.config({
   cloud_name: config.CLOUD_NAME,
   api_key: config.API_KEY,
@@ -45,7 +44,8 @@ app.post('/api/reviews/image-upload', (req, res) => {
     })
 })
 
-app.listen(port, function () {
-  console.log(`listening on port ${port}`);
+app.listen(3246, function () {
+  console.log(`listening on port 3246`);
 });
 
+module.exports = app;
