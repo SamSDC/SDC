@@ -111,5 +111,6 @@ Catwalk.pem
 postgres-data/*
 config.js
 
+package-lock.json
 csv-files/*
 csv/
