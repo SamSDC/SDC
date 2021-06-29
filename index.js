@@ -44,6 +44,10 @@ app.post('/api/reviews/image-upload', (req, res) => {
     })
 })
 
+app.get('loaderio-b9e569b9e076328895d5e6ce0fa80516.txt', (req, res) => {
+  res.send('loaderio-b9e569b9e076328895d5e6ce0fa80516')
+})
+
 app.listen(3246, function () {
   console.log(`listening on port 3246`);
 });
