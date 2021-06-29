@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(formData.parse())
 
 app.use('/loaderio-7fc67e606b5df863d118048d53bff37c/', (req, res) => {
-  res.sendFile('loaderio-7fc67e606b5df863d118048d53bff37c.txt')
+  res.sendFile(__dirname + '/loaderio-7fc67e606b5df863d118048d53bff37c.txt')
 });
 
 app.use('/api', router);
