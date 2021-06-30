@@ -17,7 +17,7 @@ module.exports = {
     models.questionsTable
       .getAnswersTable(req.params.question_id)
       .then((response) => {
-        console.log(response);
+       
         res.status(200).end(JSON.stringify(response.rows));
       })
       .catch((err) => {
@@ -36,7 +36,7 @@ module.exports = {
         helpful: req.body.helpful,
         reported: req.body.reported,
       })
-      .then((response) => {
+      .then((res) => {
         res.status(201).end();
       })
       .catch((err) => {
@@ -83,7 +83,7 @@ module.exports = {
       .putQuestionsHelpful({
         questionId: req.params.question_id,
       })
-      .then((response) => {
+      .then((res) => {
         res.status(204).end();
       })
       .catch((err) => {
@@ -97,7 +97,7 @@ module.exports = {
       .putQuestionsReport({
         questionId: req.params.question_id,
       })
-      .then((response) => {
+      .then((res) => {
         res.status(204).end();
       })
       .catch((err) => {
@@ -111,8 +111,8 @@ module.exports = {
       .putAnswersHelpful({
         answer_id: req.params.answer_id,
       })
-      .then((response) => {
-        console.log(response);
+      .then((res) => {
+
         res.status(204).end();
       })
       .catch((err) => {
@@ -126,7 +126,7 @@ module.exports = {
       .putAnswersReported({
         answerId: req.params.answer_id,
       })
-      .then((response) => {
+      .then((res) => {
         res.status(204).end();
       })
       .catch((err) => {
